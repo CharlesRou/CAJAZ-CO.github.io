@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajaz Royal</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(20, 20, 20, 1) 100%);
+            background-size: cover;
+            color: white;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Arrière-plan étoilé animé */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('.png') repeat;
+            background: url('https://attachments.office.net/owa/anis.rabehi%40epita.fr/service.svc/s/GetAttachmentThumbnail?id=AAMkAGQxODI1NWQzLWNjMzgtNDVkNS05MDBjLWU4MGIyZTgxZWUyNABGAAAAAABOGIuDZKnsSKbYQh3SBejfBwDACJIvVtxlT5KHzFqLKYPkAAAAAAEMAADACJIvVtxlT5KHzFqLKYPkAAB6%2BaF8AAABEgAQACcNddNd%2Fj1Nrj9hNanA990%3D&thumbnailType=2&token=eyJhbGciOiJSUzI1NiIsImtpZCI6IkEzMDVCMkU1Q0ZERjFGQTFBODgyNTU2MzM3NDhCQkNBRTAxNUU5OTIiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJvd1d5NWNfZkg2R29nbFZqTjBpN3l1QVY2WkkifQ.eyJvcmlnaW4iOiJodHRwczovL291dGxvb2sub2ZmaWNlLmNvbSIsInVjIjoiMGYwY2YxYjZkZjdjNDQxMDhlZWJiN2Q5ODEyYmUzZmUiLCJzaWduaW5fc3RhdGUiOiJrbXNpIiwidmVyIjoiRXhjaGFuZ2UuQ2FsbGJhY2suVjEiLCJhcHBjdHhzZW5kZXIiOiJPd2FEb3dubG9hZEAzNTM0YjNkNy0zMTZjLTRiYzktOWVkZS02MDVjODYwZjQ5ZDIiLCJpc3NyaW5nIjoiV1ciLCJhcHBjdHgiOiJ7XCJtc2V4Y2hwcm90XCI6XCJvd2FcIixcInB1aWRcIjpcIjExNTM4MDExMjk1MDM4ODMzNzNcIixcInNjb3BlXCI6XCJPd2FEb3dubG9hZFwiLFwib2lkXCI6XCI2YmQxY2E4Yy05MDgzLTQ5NTUtYWZiMC1lOWM3ZTExN2YyZTFcIixcInByaW1hcnlzaWRcIjpcIlMtMS01LTIxLTE0NzU1MTE5NDctMTI3NDQwNTEwMS0xMDQ0MjUyODI0LTQ5NTk2ODU0XCJ9IiwibmJmIjoxNzM2NjczNTU0LCJleHAiOjE3MzY2NzM4NTQsImlzcyI6IjAwMDAwMDAyLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMEAzNTM0YjNkNy0zMTZjLTRiYzktOWVkZS02MDVjODYwZjQ5ZDIiLCJhdWQiOiIwMDAwMDAwMi0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvYXR0YWNobWVudHMub2ZmaWNlLm5ldEAzNTM0YjNkNy0zMTZjLTRiYzktOWVkZS02MDVjODYwZjQ5ZDIiLCJoYXBwIjoib3dhIn0.QXNZFoPxAHQeZXX7FsomRtYSiYYwjcpIGUZl-SaTK4ZZXdfOQqh7HCZtIXgKLqCa99KZc-bttw26gPQDhj2aBVnLaKDsXjysKLFPcErF7brgpPHipvECHDdu_rJ05IEruLPI-KMlDgoT63OQd8BmO33o3-5D7nfwmCC93LvnjVR4yz-qHkLorlyl7T8QBr7pGU3msbeXUTu5TmEmdNm27eZzaI3fqlJ9cxQD3tFZKgMPJ7PPCffdkn70u0LPxr-8-KpgKmLFTn_hqyYPlYJSc6lE3njEl_occ7PQYkXj8BByOGWKUs7Pj36lJ-Oq9fgsHyXhU9nHJuyDHkx1K2v1uw&X-OWA-CANARY=wTQ4TUBmxVoAAAAAAAAAAKC6X1HqMt0YE3Jn29xD19goad9qjIuN7y3S1pjN3Zbf7rFh2cXCIZw.&owa=outlook.office.com&scriptVer=20250103002.08&clientId=CC8AD02491BF40FEBA53607F4126D079&animation=true.png') repeat;
+            
+            animation: moveStars 20s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes moveStars {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        /* Titre principal avec couleurs dynamiques */
+        header {
+            text-align: center;
+            padding: 2em;
+            background-color: rgba(0, 0, 0, 0.7) repeat;;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            z-index: 2;
+            position: relative;
+            animation: colorChange 3s ease infinite;
+        }
+
+        header h1 {
+            font-size: 4em;
+            color: white;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px #f7bb00, 0 0 25px rgba(255, 183, 0, 0.7), 0 0 30px rgba(255, 183, 0, 0.9);
+        }
+
+        @keyframes colorChange {
+            0% { color: #ff3d00; }
+            50% { color: #00b0f0; }
+            100% { color: #00ff00; }
+        }
+
+        /* Navigation avec animation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1em 0;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+            transform: translateY(-100%);
+            animation: slideInNav 2s ease-out forwards;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 3em;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f7bb00;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.4s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff3d00;
+            color: white;
+        }
+
+        @keyframes slideInNav {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Sections cachées au départ */
+        .section {
+            display: none;
+            padding: 3em;
+            max-width: 1200px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+            z-index: 2;
+            opacity: 0;
+            animation: fadeInSection 2s ease-out forwards;
+        }
+
+        .section-title {
+            font-size: 3em;
+            color: #ffcc00;
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(255, 183, 0, 0.8);
+        }
+
+        .section-content {
+            font-size: 1.3em;
+            color: #f7f7f7;
+            line-height: 1.8;
+            text-align: justify;
+            opacity: 0;
+            animation: fadeInText 2.5s ease-out forwards;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes fadeInSection {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        .highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+
+    <header>
+        <h1>Cajaz Royal</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="toggleSection('accueil')">Accueil</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('presentation')">Présentation</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('dangers')">Les Dangers</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('objectif')">Objectif</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page d'Accueil -->
+    <div id="accueil" class="section">
+        <h2 class="section-title">Accueil</h2>
+        <p class="section-content">
+            Bienvenue dans l'univers captivant de <span class="highlight">Cajaz Royal</span>, un jeu de survie intense où chaque décision compte. Plongez dans une ville abandonnée où l'unique règle est de survivre. Formez des alliances, collectez des ressources et combattez pour devenir le dernier joueur en vie. Chaque partie est unique grâce à des cartes générées procéduralement, offrant ainsi une expérience nouvelle à chaque session. Préparez-vous à vivre une aventure pleine de rebondissements !
+        </p>
+    </div>
+
+    <!-- Page de Présentation -->
+    <div id="presentation" class="section">
+        <h2 class="section-title">Présentation du Projet</h2>
+        <p class="section-content">
+            L'équipe de Cajaz Royale, composée de Charles, Hakim, Anis, Jad, et Zuhayr, rassemble des profils variés et complémentaires, unis par leur passion pour l'informatique et les jeux vidéo. Forts d'expériences dans des projets tels que le développement de jeux multijoueurs, de sites web interactifs, de prototypes d'IA et de calculatrices, ils maîtrisent des outils et langages comme Python, C++, HTML, et FL Studio. Leur curiosité pour les mécanismes des jeux vidéo et leur créativité se traduisent dans leur travail, que ce soit à travers la composition musicale, la programmation en réseau, ou la conception artistique. Ensemble, ils exploitent leurs compétences en gestion d'équipe, en résolution de problèmes complexes, et en direction artistique pour créer un projet ambitieux et immersif, combinant technologie et innovation.
+        </p>
+    </div>
+
+    <!-- Page des Membres du Groupe -->
+    <div id="dangers" class="section">
+        <h2 class="section-title">Nos Membres</h2>
+        <p class="section-content">
+            Le jeu se déroule dans un monde post-apocalyptique, dans une ville dévastée par une série de catastrophes naturelles et humaines. Les joueurs devront naviguer à travers cet environnement hostile, gérer leurs ressources et éliminer leurs adversaires pour être couronnés champions. Le projet implique l'utilisation de mécaniques de survie, de combats, et d'intelligence artificielle pour les ennemis. En tant que développeurs, nous souhaitons apporter notre propre vision du genre battle royale avec des éléments uniques qui le rendent encore plus intense et immersif.
+        </p>
+    </div>
+
+    <!-- Page Objectif -->
+    <div id="objectif" class="section">
+        <h2 class="section-title">Objectif</h2>
+        <p class="section-content">
+            Notre objectif principal est de créer un jeu à la fois amusant et stimulant pour les joueurs, où ils devront faire preuve de stratégie et d'habileté. Le mode de jeu battle royale avec une carte générée procéduralement garantit que chaque partie sera unique. De plus, nous voulons incorporer des mécaniques de jeu novatrices et une intelligence artificielle de qualité pour offrir une expérience inédite. Notre but est de créer un jeu qui soit aussi amusant à jouer qu’à développer, tout en apportant une véritable plus-value au genre.
+        </p>
+    </div>
+
+    <!-- Page Contact -->
+    <div id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-content">
+            Pour toute question, suggestion ou collaboration, n'hésitez pas à nous contacter à l'adresse suivante : <strong>contact@cajazroyal.com</strong>. Nous serions ravis de discuter avec vous de notre projet et de toute opportunité de partenariat. Vous pouvez également nous suivre sur nos réseaux sociaux pour plus de mises à jour et d'informations sur le développement du jeu.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Cajaz Royal - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        function toggleSection(id) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                if (section.id === id) {
+                    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
